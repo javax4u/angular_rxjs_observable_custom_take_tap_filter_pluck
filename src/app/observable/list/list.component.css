@@ -1,0 +1,12 @@
+ul.list{
+  list-style-type: none;
+  margin:0 0 0 ;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.list li{
+  width: calc(25%-20px);
+  margin: 10px;
+
+}
