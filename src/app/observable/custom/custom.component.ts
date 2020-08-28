@@ -12,8 +12,9 @@ export class CustomComponent implements OnInit,OnDestroy {
 
   constructor(private designUtility:DesignUtilityService) { }
 
-   techStatus;techStatus2;
+   techStatus;techStatus2;techStatus3;
    subscription2=Subscription;
+   currentName;currentNameStatus="running ...";
   ngOnInit() {
 
     let customObservable = Observable.create(observer => {
@@ -51,14 +52,17 @@ export class CustomComponent implements OnInit,OnDestroy {
     });
 
     //Ex-02 (custom interval)
-
+    const array2=['Angular','TypeScript','Java Script','HTML','CSS','JAVA','ActiveMQ','Kafka'];
     const customObservable2=Observable.create(observer => {
-      let count=1;
+      let count=0;
       setInterval(() => {
-        observer.next("Data Emit "+count);
+        observer.next(array2[count]);
         count++;
-        if(count >= 5){
+        if(count >= 3){
           observer.error("error emit");
+        }
+        if(count >= 5){
+          observer.complete();
         }
       },1000);
     })
@@ -73,6 +77,31 @@ export class CustomComponent implements OnInit,OnDestroy {
     });
 
     //Ex-03 ()
+    const array3=['Rupesh','Apoorv','Sankalp','Pisyuh','Madarchod','Eric'];
+    const customObservable3=Observable.create(observer => {
+      let count=0;
+      setInterval(() => {
+        observer.next(array3[count]);
+        count++;
+        if(count >= 3){
+         // observer.error("error emit");
+        }
+        if(count >= 5){
+          observer.complete();
+        }
+      },1000);
+    })
+
+    customObservable3.subscribe(response => {
+      console.log(response);
+      this.currentName=response;
+    },(error) => {
+      this.currentNameStatus="Error";
+      this.techStatus3="error";
+    },()=>{
+      this.currentNameStatus="Success";
+      this.techStatus3="completed";
+    });
   }
 
   ngOnDestroy(){
