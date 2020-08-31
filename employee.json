@@ -1,0 +1,14 @@
+[
+ { firstName: 'Rupesh', lastName: 'Kumar', address: { city: 'patna', state: 'br' } },
+ { firstName: 'Tulsi', lastName: 'Khan', address: { city: 'bhagalpur', state: 'br' } },
+ { firstName: 'Irfan', lastName: 'Pandit', address: { city: 'ranchi', state: 'jh' } },
+ { firstName: 'Sachin', lastName: 'Geourge', address: { city: 'pune', state: 'mh' } },
+ { firstName: 'Eric', lastName: 'Ramdas', address: { city: 'pasighat', state: 'a.p' } },
+ { firstName: 'Apoorv', lastName: 'Pandey', address: { city: 'gwalior', state: 'm.p' } },
+ { firstName: 'Prabhat', lastName: 'Pandey', address: { city: 'patna', state: 'br' } },
+ { firstName: 'Piyush', lastName: 'Sharma', address: { city: 'patna', state: 'br' } },
+ { firstName: 'Vicky', lastName: 'Verma', address: { city: 'patna', state: 'br' } },
+ { firstName: 'Govinda', lastName: 'Joseph', address: { city: 'patna', state: 'br' } },
+ { firstName: 'Hrithik', lastName: 'Roshan', address: { city: 'patna', state: 'br' } },
+ { firstName: 'Amitabh', lastName: 'Singh', address: { city: 'patna', state: 'br' } }
+]
