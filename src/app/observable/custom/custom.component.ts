@@ -13,7 +13,7 @@ export class CustomComponent implements OnInit,OnDestroy {
   constructor(private designUtility:DesignUtilityService) { }
 
    techStatus;techStatus2;techStatus3;
-   subscription2=Subscription;
+   subscription2:Subscription;
    currentName;currentNameStatus="running ...";
   ngOnInit() {
 
@@ -102,10 +102,12 @@ export class CustomComponent implements OnInit,OnDestroy {
       this.currentNameStatus="Success";
       this.techStatus3="completed";
     });
+
+    this.subscription2.unsubscribe;
   }
 
   ngOnDestroy(){
-  this.subscription2.unsubscribe();
+
   }
 
 }

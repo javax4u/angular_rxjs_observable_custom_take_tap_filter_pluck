@@ -14,7 +14,7 @@
       </div>
       <div class="col md-4">
         <div class="card">
-          <div class="card-header"><strong>Example O2:</strong> map (data => data *10) </div>
+          <div class="card-header"><strong>Example O2:</strong> filter(data => data.gender == 'female') </div>
           <div class="card-body">
             <ul id="elContainer2">
             </ul>
@@ -23,9 +23,21 @@
       </div>
       <div class="col md-4">
         <div class="card">
-          <div class="card-header"><strong>Example O3:</strong> map (data => data.firstName)</div>
+          <div class="card-header"><strong>Example O3:</strong> filter(data => data.firstName.length >= 5)</div>
           <div class="card-body">
             <ul id="elContainer3">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col md-12">
+        <div class="card">
+          <div class="card-header"><strong>Tap Example O1:</strong> tap all data</div>
+          <div class="card-body">
+            <ul id="elContainer4">
             </ul>
           </div>
         </div>

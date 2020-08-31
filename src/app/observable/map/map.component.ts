@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DesignUtilityService } from 'src/app/appServices/design-utility.service';
-import { from,  Subscription } from 'rxjs';
+import { from, Subscription } from 'rxjs';
 import { map, pluck } from 'rxjs/operators';
 
 @Component({
@@ -28,7 +28,7 @@ export class MapComponent implements OnInit {
     this.subscribe1.unsubscribe;
 
     this.subscribe2 = numberArrayStream.subscribe(data => {
-      data = data * 10;
+      //number numberTemp=10;
       this.designUtility.appendChild(data, "elContainer2");
     })
 
@@ -36,29 +36,29 @@ export class MapComponent implements OnInit {
 
 
     const students = [
-      { firstName: 'Rupesh', lastName: 'Kumar',address:{city:'patna',state:'br'} },
-      { firstName: 'Tulsi', lastName: 'Khan',address:{city:'bhagalpur',state:'br'} },
-      { firstName: 'Irfan', lastName: 'Pandit',address:{city:'ranchi',state:'jh'} },
-      { firstName: 'Sachin', lastName: 'Geourge',address:{city:'pune',state:'mh'} },
-      { firstName: 'Eric', lastName: 'Ramdas',address:{city:'pasighat',state:'a.p'} },
-      { firstName: 'Apoorv', lastName: 'Pandey',address:{city:'gwalior',state:'m.p'} }
+      { firstName: 'Rupesh', lastName: 'Kumar', address: { city: 'patna', state: 'br' } },
+      { firstName: 'Tulsi', lastName: 'Khan', address: { city: 'bhagalpur', state: 'br' } },
+      { firstName: 'Irfan', lastName: 'Pandit', address: { city: 'ranchi', state: 'jh' } },
+      { firstName: 'Sachin', lastName: 'Geourge', address: { city: 'pune', state: 'mh' } },
+      { firstName: 'Eric', lastName: 'Ramdas', address: { city: 'pasighat', state: 'a.p' } },
+      { firstName: 'Apoorv', lastName: 'Pandey', address: { city: 'gwalior', state: 'm.p' } }
     ];
 
 
     const studentsStream = from(students);
     this.subscribe3 = studentsStream
-      .pipe(map(data => data.firstName) )
+      .pipe(map(data => data.firstName))
       .subscribe(reponse => {
         this.designUtility.appendChild(reponse, "elContainer3");
       })
     this.subscribe3.unsubscribe;
     this.subscribe3 = studentsStream
-    //.pipe(map(data => data.address.city) ) //it also works
-    .pipe(pluck('address','city') )
-    .subscribe(reponse => {
-      this.designUtility.appendChild(reponse, "elContainer4");
-    })
-  this.subscribe3.unsubscribe;
+      //.pipe(map(data => data.address.city) ) //it also works
+      .pipe(pluck('address', 'city'))
+      .subscribe(reponse => {
+        this.designUtility.appendChild(reponse, "elContainer4");
+      })
+    this.subscribe3.unsubscribe;
   }
 
 }
